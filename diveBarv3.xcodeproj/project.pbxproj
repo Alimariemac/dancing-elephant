@@ -13,6 +13,10 @@
 		E4503883231C6BBB0068926C /* diveBarv3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4503881231C6BBB0068926C /* diveBarv3.xcdatamodeld */; };
 		E4503885231C6BBC0068926C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4503884231C6BBC0068926C /* Assets.xcassets */; };
 		E4503888231C6BBC0068926C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4503886231C6BBC0068926C /* LaunchScreen.storyboard */; };
+		E4503890231C83A40068926C /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450388F231C83A40068926C /* NetworkController.swift */; };
+		E4503892231C83C40068926C /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4503891231C83C40068926C /* Secrets.swift */; };
+		E4503894231DA7C90068926C /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4503893231DA7C90068926C /* Bar.swift */; };
+		E4503896231DACD20068926C /* UIView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4503895231DACD20068926C /* UIView1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		E4503884231C6BBC0068926C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4503887231C6BBC0068926C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4503889231C6BBC0068926C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E450388F231C83A40068926C /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		E4503891231C83C40068926C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		E4503893231DA7C90068926C /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		E4503895231DACD20068926C /* UIView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 			children = (
 				E450387A231C6BBB0068926C /* AppDelegate.swift */,
 				E450387C231C6BBB0068926C /* ViewController.swift */,
+				E4503895231DACD20068926C /* UIView1.swift */,
+				E450388F231C83A40068926C /* NetworkController.swift */,
+				E4503893231DA7C90068926C /* Bar.swift */,
+				E4503891231C83C40068926C /* Secrets.swift */,
 				E450387E231C6BBB0068926C /* Main.storyboard */,
 				E4503884231C6BBC0068926C /* Assets.xcassets */,
 				E4503886231C6BBC0068926C /* LaunchScreen.storyboard */,
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4503890231C83A40068926C /* NetworkController.swift in Sources */,
+				E4503894231DA7C90068926C /* Bar.swift in Sources */,
+				E4503892231C83C40068926C /* Secrets.swift in Sources */,
 				E450387D231C6BBB0068926C /* ViewController.swift in Sources */,
 				E4503883231C6BBB0068926C /* diveBarv3.xcdatamodeld in Sources */,
+				E4503896231DACD20068926C /* UIView1.swift in Sources */,
 				E450387B231C6BBB0068926C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
