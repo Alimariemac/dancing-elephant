@@ -59,30 +59,41 @@
                                 <color key="textColor" red="0.41568627450000001" green="0.4549019608" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-vD-X44" customClass="MKMapView">
-                                <rect key="frame" x="0.0" y="592" width="414" height="304"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-vD-X44" customClass="MKMapView">
+                                <rect key="frame" x="0.0" y="550" width="414" height="346"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXg-WJ-Wjx">
-                                <rect key="frame" x="30" y="409" width="354" height="121.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXg-WJ-Wjx">
+                                <rect key="frame" x="29" y="409" width="356" height="121"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Aliquam magna arcu, viverra at mauris et, vestibulum mollis eros. Suspendisse in mi a eros ultrices rhoncus nec gravida … See More</string>
-                                <color key="textColor" red="0.41568627450000001" green="0.4549019608" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Aliquam magna arcu, viverra at mauris et, vestibulum mollis eros. Suspendisse in mi a eros ultrices rhoncus nec gravida … See More</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.41568627450000001" green="0.4549019608" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="22" name=".SFNSDisplay"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <progressView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" trackImage="Path" translatesAutoresizingMaskIntoConstraints="NO" id="gfN-lN-aKk">
                                 <rect key="frame" x="30" y="344" width="354" height="2"/>
                                 <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                 <color key="progressTintColor" red="0.2274509804" green="0.47058823529999999" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ugly Baby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc3-hz-9BB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ugly Baby" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc3-hz-9BB">
                                 <rect key="frame" x="30" y="108" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.17254901959999999" green="0.18039215689999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PkF-eM-gRs">
+                            <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PkF-eM-gRs">
                                 <rect key="frame" x="30" y="206" width="384" height="118"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -95,24 +106,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ur7-O9-WP9">
+                                    <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagecell" id="Ur7-O9-WP9" customClass="ImageCell" customModule="diveBarv3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="190" height="118"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="190" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-nu-xKm">
+                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-nu-xKm">
                                                     <rect key="frame" x="0.0" y="0.0" width="190" height="118"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="bC9-nu-xKm" secondAttribute="bottom" id="DiW-ex-pHH"/>
-                                            <constraint firstAttribute="trailing" secondItem="bC9-nu-xKm" secondAttribute="trailing" id="Gi6-NR-G4a"/>
-                                            <constraint firstItem="bC9-nu-xKm" firstAttribute="leading" secondItem="Ur7-O9-WP9" secondAttribute="leading" id="qyK-bn-iLt"/>
-                                            <constraint firstItem="bC9-nu-xKm" firstAttribute="top" secondItem="Ur7-O9-WP9" secondAttribute="top" id="zad-Zh-1tQ"/>
+                                            <constraint firstItem="bC9-nu-xKm" firstAttribute="top" secondItem="Ur7-O9-WP9" secondAttribute="top" id="IVl-PI-6IP"/>
+                                            <constraint firstAttribute="trailing" secondItem="bC9-nu-xKm" secondAttribute="trailing" id="MsC-21-pww"/>
+                                            <constraint firstAttribute="bottom" secondItem="bC9-nu-xKm" secondAttribute="bottom" id="OJ4-QD-vDU"/>
+                                            <constraint firstItem="bC9-nu-xKm" firstAttribute="leading" secondItem="Ur7-O9-WP9" secondAttribute="leading" id="ccp-Lv-nRk"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="bC9-nu-xKm" id="HBO-BT-GZK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -128,9 +142,8 @@
                             <constraint firstItem="Yc3-hz-9BB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0QI-5z-Bv8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p86-0B-bZP" secondAttribute="trailing" constant="30" id="2wo-3K-HtB"/>
                             <constraint firstItem="AbG-vD-X44" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6U0-Cp-pIn"/>
-                            <constraint firstAttribute="trailing" secondItem="UXg-WJ-Wjx" secondAttribute="trailing" constant="30" id="BCq-NB-hQN"/>
                             <constraint firstItem="gfN-lN-aKk" firstAttribute="leading" secondItem="p86-0B-bZP" secondAttribute="leading" id="GjH-Wr-gBt"/>
-                            <constraint firstItem="AbG-vD-X44" firstAttribute="centerX" secondItem="UXg-WJ-Wjx" secondAttribute="centerX" id="H2b-7C-TK8"/>
+                            <constraint firstAttribute="trailing" secondItem="UXg-WJ-Wjx" secondAttribute="trailing" constant="29" id="Ho2-31-quc"/>
                             <constraint firstItem="AbG-vD-X44" firstAttribute="top" secondItem="UXg-WJ-Wjx" secondAttribute="bottom" constant="20" id="MJz-jW-8H5"/>
                             <constraint firstItem="PkF-eM-gRs" firstAttribute="top" secondItem="EWO-4i-ton" secondAttribute="bottom" constant="20" id="Ndz-Js-bHy"/>
                             <constraint firstItem="UXg-WJ-Wjx" firstAttribute="top" secondItem="p86-0B-bZP" secondAttribute="bottom" constant="15" id="QSi-Bd-bHk"/>
@@ -141,13 +154,13 @@
                             <constraint firstItem="AbG-vD-X44" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="X6j-wP-YmW"/>
                             <constraint firstItem="PkF-eM-gRs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ywo-BS-70w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EWO-4i-ton" secondAttribute="trailing" constant="30" id="cqc-90-wg9"/>
+                            <constraint firstItem="UXg-WJ-Wjx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="29" id="dWH-vx-3z1"/>
                             <constraint firstItem="gfN-lN-aKk" firstAttribute="top" secondItem="PkF-eM-gRs" secondAttribute="bottom" constant="20" id="gIU-ME-XCO"/>
                             <constraint firstItem="gfN-lN-aKk" firstAttribute="trailing" secondItem="p86-0B-bZP" secondAttribute="trailing" id="idG-aZ-dWM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yc3-hz-9BB" secondAttribute="trailing" constant="30" id="krA-xD-ejs"/>
                             <constraint firstItem="Yc3-hz-9BB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="o3D-Jb-p6N"/>
                             <constraint firstItem="PkF-eM-gRs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="qUJ-YW-Tlo"/>
                             <constraint firstItem="EWO-4i-ton" firstAttribute="top" secondItem="Yc3-hz-9BB" secondAttribute="bottom" constant="20" id="soz-F8-FxL"/>
-                            <constraint firstItem="UXg-WJ-Wjx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="tGR-oq-3vc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -156,6 +169,7 @@
                         <outlet property="barInfo" destination="UXg-WJ-Wjx" id="uhS-mG-iia"/>
                         <outlet property="barPrice" destination="EWO-4i-ton" id="95N-lv-LiN"/>
                         <outlet property="barTitle" destination="Yc3-hz-9BB" id="1MY-NL-qOa"/>
+                        <outlet property="collectionView" destination="PkF-eM-gRs" id="cG6-vi-dHC"/>
                         <outlet property="mapView" destination="AbG-vD-X44" id="O1E-Js-Q4r"/>
                     </connections>
                 </viewController>

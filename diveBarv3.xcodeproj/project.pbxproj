@@ -17,6 +17,7 @@
 		E4503892231C83C40068926C /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4503891231C83C40068926C /* Secrets.swift */; };
 		E4503894231DA7C90068926C /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4503893231DA7C90068926C /* Bar.swift */; };
 		E4503896231DACD20068926C /* UIView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4503895231DACD20068926C /* UIView1.swift */; };
+		E4F930C2232EA66300C58D4B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F930C1232EA66300C58D4B /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E4503891231C83C40068926C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		E4503893231DA7C90068926C /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		E4503895231DACD20068926C /* UIView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView1.swift; sourceTree = "<group>"; };
+		E4F930C1232EA66300C58D4B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		E4503879231C6BBB0068926C /* diveBarv3 */ = {
 			isa = PBXGroup;
 			children = (
+				E4F930C1232EA66300C58D4B /* ImageCell.swift */,
 				E450387A231C6BBB0068926C /* AppDelegate.swift */,
 				E450387C231C6BBB0068926C /* ViewController.swift */,
 				E4503895231DACD20068926C /* UIView1.swift */,
@@ -155,6 +158,7 @@
 				E4503892231C83C40068926C /* Secrets.swift in Sources */,
 				E450387D231C6BBB0068926C /* ViewController.swift in Sources */,
 				E4503883231C6BBB0068926C /* diveBarv3.xcdatamodeld in Sources */,
+				E4F930C2232EA66300C58D4B /* ImageCell.swift in Sources */,
 				E4503896231DACD20068926C /* UIView1.swift in Sources */,
 				E450387B231C6BBB0068926C /* AppDelegate.swift in Sources */,
 			);

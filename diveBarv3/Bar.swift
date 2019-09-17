@@ -14,17 +14,19 @@ class Bar: NSObject, MKAnnotation  {
     var barRating: String
     var barPrice: String
     var title: String?
-    var barImage: String
+    var barImages: [String]
     var barDescription: String
+    var canonicalURL: String
     
-    init(coordinate: CLLocationCoordinate2D, barRating: String, barPrice: String, title:String, barDescription:String, barImage:String)
+    init(coordinate: CLLocationCoordinate2D, barRating: String, barPrice: String, title:String, barDescription:String, barImages:[String], canonicalURL : String)
     {
         self.coordinate = coordinate
         self.barRating = barRating
         self.barPrice = barPrice
         self.title = title
         self.barDescription = barDescription
-        self.barImage=barImage
+        self.barImages = barImages
+        self.canonicalURL = canonicalURL
     }
 }
 
