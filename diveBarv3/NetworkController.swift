@@ -15,6 +15,12 @@ class NetworkController{
     let start = "https://api.foursquare.com/v2/"
     var randomBar = Bar(coordinate:  CLLocationCoordinate2D(latitude: 0, longitude: 0),barRating: "0", barPrice: "1", title: "Empty Bar", barDescription: "No description here", barImages: ["bar"], canonicalURL: "https://foursquare.com/city-guide")
     var agreeCount : Int = 0
+    var randomID : String = "123"
+    var photoArray = [""]
+    var photoCount = 0
+    
+    
+    
     func getAPI(middle: String , completion:@escaping ([String:Any])->()){
         print(middle)
         if let url = URL(string: "\(start)\(middle)&client_id=\(client_id)&client_secret=\(client_secret)&v=20190829"){
@@ -66,13 +72,38 @@ class NetworkController{
             }
             bars.append(barId)
         }
-        guard let randomElement = bars.randomElement()else
-        {
-            return
+        if let randomElement = bars.randomElement() {
+            randomID = randomElement
         }
-        completion("venues/\(randomElement)?")
+        completion("venues/\(randomID)/photos?")
+        
     }
     
+    func getVenuePhotos(dictionary:[String:Any], completion:@escaping (String) -> ()){
+        print(dictionary)
+        guard let photos = dictionary["photos"] as? [String:Any],
+            let photoItems = photos["items"] as? [[String:Any]]
+            else{
+                print("error getting photos")
+                return
+        }
+        for photoItem in photoItems {
+            if let prefix = photoItem["prefix"] as? String {
+                if let suffix = photoItem["suffix"] as? String {
+                    let photoURL = "\(prefix)original\(suffix)"
+                    if photoCount == 0 {
+                        photoArray = [photoURL]
+                        photoCount += 1
+                    }
+                    else {
+                   photoArray.append(photoURL)
+                    }
+                }
+            }
+        }
+        print(randomBar.barImages)
+        completion("venues/\(randomID)?")
+    }
     
     func getVenueDetails(dictionary:[String:Any], completion:@escaping (Bar)->()){
         var barPrice = "1"
@@ -112,31 +143,23 @@ class NetworkController{
                 case 4:
                     barPrice = "$$$$"
                 default:
-                    barPrice = "$$$$"
+                    barPrice = "?"
                 }
                
             }
         }
-        guard let photos = venueObject["photos"] as? [String:Any],
-            let photoGroups = photos["groups"] as? [[String:Any]]
-            else{
-                print("There is an error")
-                return
-        }
-        if let venuePhotos = photoGroups[1] as? [String:Any]{
-            let photoItems = venuePhotos["items"] as? [[String:Any]]
-            print(photoItems)
-        }
-        else{
-            print("index out of range?")
-        }
-        
-//            let venuePhotos = photoGroups[1] as? [String:Any],
-//            let photoItems = venuePhotos["items"] as? [String:Any]
-//            else{
-//                print("there is an error")
-//                return
-        
+//        if let photos = venueObject["photos"] as? [String:Any]{
+//            if let photoGroups = photos["groups"] as? [[String:Any]] {
+//            for group in photoGroups{
+//                if let type = group["type"] as? String {
+//                    if type == "venue" {
+//                        print(group)
+//                    }
+//                }
+//                }
+//            }
+//
+//        }
         
         
         guard let tips = venueObject["tips"] as? [String:Any],
@@ -165,7 +188,7 @@ class NetworkController{
             }
         }
         
-        self.randomBar = Bar(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), barRating: String(rate),barPrice: barPrice, title: barName, barDescription: description, barImages: ["abc"], canonicalURL: canonicalURL)
+        self.randomBar = Bar(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), barRating: String(rate),barPrice: barPrice, title: barName, barDescription: description, barImages: photoArray, canonicalURL: canonicalURL)
         print(self.randomBar)
         completion(self.randomBar)
     }

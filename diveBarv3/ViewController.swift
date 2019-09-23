@@ -54,22 +54,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-
+    
+    
     func doAllBarFinder(completion:@escaping () -> ()){
         let nc = NetworkController()
         nc.getAPI(middle: "venues/search?ll=\(lat),\(long)&categoryId=4bf58dd8d48988d118941735&radius=1500") { (dictionary) in
             nc.getRandomBar(dictionary: dictionary, completion: { (middle) in
                 nc.getAPI(middle: middle, completion: { (dictionary) in
-                    nc.getVenueDetails(dictionary: dictionary, completion: { (Bar) in
-                        self.randomBar = Bar
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "barDetails", sender:self)
-                        }
+                    nc.getVenuePhotos(dictionary: dictionary, completion: { (middle) in
+                        nc.getAPI(middle: middle, completion: { (dictionary) in
+                            nc.getVenueDetails(dictionary: dictionary, completion: { (Bar) in
+                                self.randomBar = Bar
+                                DispatchQueue.main.async {
+                                    self.performSegue(withIdentifier: "barDetails", sender:self)
+                                }
+                            })
+                        })
                     })
                 })
             })
         }
     }
+
+//    func doAllBarFinder(completion:@escaping () -> ()){
+//        let nc = NetworkController()
+//        nc.getAPI(middle: "venues/search?ll=\(lat),\(long)&categoryId=4bf58dd8d48988d118941735&radius=1500") { (dictionary) in
+//            nc.getRandomBar(dictionary: dictionary, completion: { (middle) in
+//                nc.getAPI(middle: middle, completion: { (dictionary) in
+//                    nc.getVenueDetails(dictionary: dictionary, completion: { (Bar) in
+//                        self.randomBar = Bar
+//                        DispatchQueue.main.async {
+//                            self.performSegue(withIdentifier: "barDetails", sender:self)
+//                        }
+//                    })
+//                })
+//            })
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "barDetails" {

@@ -201,19 +201,29 @@ extension UIView1 : MKMapViewDelegate {
 
 extension UIView1 : UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("in extension")
-        return 3
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        var count = 3
+        if let randomBar = randomBar {
+            count = randomBar.barImages.count
+        }
+        return count
     }
     
+    // MARK: add images to ui
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imagecell", for: indexPath) as! ImageCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imagecell", for: indexPath)
+            as? ImageCell else
+            {
+                return UICollectionViewCell()
+            }
+        
+        let indexOfElement = indexPath.row
         if let randomBar = randomBar {
-        cell.imageView.image = UIImage(named: "bar")
+            if let barData = URL(string: randomBar.barImages[indexOfElement]){
+                if let data = try? Data(contentsOf: barData){
+                    cell.imageView.image = UIImage(data: data)
+                }
+            }
         }
         return cell
     }
