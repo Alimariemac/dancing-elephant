@@ -22,7 +22,6 @@ class NetworkController{
     
     
     func getAPI(middle: String , completion:@escaping ([String:Any])->()){
-        print(middle)
         if let url = URL(string: "\(start)\(middle)&client_id=\(client_id)&client_secret=\(client_secret)&v=20190829"){
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
@@ -65,7 +64,7 @@ class NetworkController{
                 print("no venues")
                 return
             }
-        for var v in venues{
+        for v in venues{
             guard let barId = v["id"] as? String else
             {
                 return
@@ -80,7 +79,6 @@ class NetworkController{
     }
     
     func getVenuePhotos(dictionary:[String:Any], completion:@escaping (String) -> ()){
-        print(dictionary)
         guard let photos = dictionary["photos"] as? [String:Any],
             let photoItems = photos["items"] as? [[String:Any]]
             else{
@@ -101,7 +99,6 @@ class NetworkController{
                 }
             }
         }
-        print(randomBar.barImages)
         completion("venues/\(randomID)?")
     }
     
@@ -148,19 +145,6 @@ class NetworkController{
                
             }
         }
-//        if let photos = venueObject["photos"] as? [String:Any]{
-//            if let photoGroups = photos["groups"] as? [[String:Any]] {
-//            for group in photoGroups{
-//                if let type = group["type"] as? String {
-//                    if type == "venue" {
-//                        print(group)
-//                    }
-//                }
-//                }
-//            }
-//
-//        }
-        
         
         guard let tips = venueObject["tips"] as? [String:Any],
             let groups = tips["groups"] as? [[String:Any]],
@@ -175,7 +159,6 @@ class NetworkController{
                     self.agreeCount = agreeCount
                     if let des = item["text"] as? String {
                         description = des
-                        print(des)
                     }
                     else{
                         return
@@ -189,7 +172,6 @@ class NetworkController{
         }
         
         self.randomBar = Bar(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), barRating: String(rate),barPrice: barPrice, title: barName, barDescription: description, barImages: photoArray, canonicalURL: canonicalURL)
-        print(self.randomBar)
         completion(self.randomBar)
     }
     

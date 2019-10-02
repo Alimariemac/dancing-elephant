@@ -10,6 +10,9 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+
+    
 
     let locationManager = CLLocationManager()
     var lat : Double = 0;
@@ -19,11 +22,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
    
     
     override func viewDidLoad() {
+        self.navigationItem.hidesBackButton = true
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
+       
         
     }
 
@@ -34,7 +39,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     lat = location.coordinate.latitude
                     long = location.coordinate.longitude
                 }
-                print(lat,long)
                 flag = false
                 doAllBarFinder{
                     

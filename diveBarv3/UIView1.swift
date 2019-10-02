@@ -16,6 +16,10 @@ class UIView1: UIViewController {
     @IBOutlet var barInfo: UITextView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var newBarButton: UIButton!
+    
+    @IBAction func buttonClick(_ sender: Any) {
+    }
     
     let annotation = MKPointAnnotation()
     var lat : Double = 0
@@ -33,6 +37,7 @@ class UIView1: UIViewController {
     var rangedBody : String = ""
 
     override func viewDidLoad() {
+        self.navigationItem.hidesBackButton = true
         // MARK: - ui setup
         barTitle.text = ""
         barInfo.text = ""
@@ -42,11 +47,21 @@ class UIView1: UIViewController {
         barPrice.isHidden = true
         mapView.isHidden = true
         mapView.delegate = self
+        
+        // MARK: button setup
+        newBarButton.layer.cornerRadius = (newBarButton.frame.size.height)*0.5
+        newBarButton.clipsToBounds = true
+        newBarButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        newBarButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        newBarButton.layer.shadowOpacity = 0.5
+        newBarButton.layer.shadowRadius = 0.0
+        newBarButton.layer.masksToBounds = false
 
         // MARK: -map setup
         mapView.mapType = .standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
+        
         
         collectionView.dataSource = self
         
@@ -71,7 +86,6 @@ class UIView1: UIViewController {
                 regionRadius = distanceInMeters + 400
                 
                 //truncate text
-                print(randomBar.barDescription)
                 if(randomBar.barDescription.count > 100){
                 rangedBody = String(randomBar.barDescription.prefix(120))
                 }
@@ -112,9 +126,11 @@ class UIView1: UIViewController {
                     barInfo.textContainer.lineFragmentPadding = 0
                     self.barInfo.isUserInteractionEnabled = true
                     self.barInfo.isEditable = false
+                    
                     self.barInfo.linkTextAttributes = [
-                        .foregroundColor: UIColor.blue,
+                        .foregroundColor: UIColor(red:0.97, green:0.82, blue:0.16, alpha:1.0),
                         .underlineStyle: NSUnderlineStyle.single.rawValue
+                        
                     ]
                     
            //thread 1 change ui
@@ -128,6 +144,8 @@ class UIView1: UIViewController {
                 self.barPrice.text = "\(randomBar.barPrice) • \(randomBar.barRating)/10"
                 self.barPrice.isHidden = false
                 self.mapView.isHidden = false
+                
+                self.barInfo.textColor = UIColor.white
   
                 }
             }
@@ -137,7 +155,6 @@ class UIView1: UIViewController {
     // MARK: -centering function
     
     func centerMapOnLocation(location: CLLocation) {
-        print(regionRadius)
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
@@ -159,7 +176,6 @@ class UIView1: UIViewController {
                 }
                 return
             }
-            print(response.routes[0].name)
             let route = response.routes[0]
             self.mapView.addOverlay(route.polyline)
             self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
@@ -175,7 +191,7 @@ class UIView1: UIViewController {
 }
 
 
-// Mark: - MapView extension
+// MARK: - MapView extension
 extension UIView1 : MKMapViewDelegate {
     class CustomAnnotationView: MKMarkerAnnotationView {
         override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
@@ -197,7 +213,8 @@ extension UIView1 : MKMapViewDelegate {
     }
 }
 
-// Mark: - CollectionView extension
+
+//MARK: - CollectionView extension
 
 extension UIView1 : UICollectionViewDataSource {
     
@@ -222,16 +239,16 @@ extension UIView1 : UICollectionViewDataSource {
             if let barData = URL(string: randomBar.barImages[indexOfElement]){
                 if let data = try? Data(contentsOf: barData){
                     cell.imageView.image = UIImage(data: data)
+                    cell.imageView.layer.cornerRadius = 5.0;
+                    cell.imageView.layer.masksToBounds = true;
+                    cell.imageView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+                    cell.imageView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+                    cell.imageView.layer.shadowOpacity = 0.5
+                    cell.imageView.layer.shadowRadius = 0.0
                 }
             }
         }
         return cell
-    }
-}
-
-extension UIView1: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item + 1)
     }
 }
 

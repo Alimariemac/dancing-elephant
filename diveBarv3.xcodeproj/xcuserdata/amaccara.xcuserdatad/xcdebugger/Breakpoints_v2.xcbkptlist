@@ -1,102 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "BEA20E2C-B694-4F85-89B1-BE392387A015"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "diveBarv3/NetworkController.swift"
-            timestampString = "590937043.651332"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "getVenuePhotos(dictionary:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
+            uuid = "8994EA43-7911-498E-933B-83D2084EBD66"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "diveBarv3/NetworkController.swift"
-            timestampString = "590937043.651726"
+            filePath = "diveBarv3/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getVenuePhotos(dictionary:completion:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "doAllBarFinder(completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8994EA43-7911-498E-933B-83D2084EBD66 - 10eee3c1afff01ef"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in diveBarv3.ViewController.doAllBarFinder(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "8994EA43-7911-498E-933B-83D2084EBD66 - a16a7a3722696458"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in diveBarv3.ViewController.doAllBarFinder(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "125">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            uuid = "868BA224-CE14-428B-AAE9-0513641B247B"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "diveBarv3/NetworkController.swift"
-            timestampString = "590937043.651957"
+            filePath = "diveBarv3/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "getVenuePhotos(dictionary:completion:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "doAllBarFinder(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "13A3EE96-FB8C-4EF9-AE86-CE6015F8B2DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "diveBarv3/UIView1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F04ABB0-953D-4DF8-B2B5-488A5EA7F184"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "diveBarv3/UIView1.swift"
-            timestampString = "590937043.652174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "diveBarv3/NetworkController.swift"
-            timestampString = "590937043.652455"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "getVenuePhotos(dictionary:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "diveBarv3/NetworkController.swift"
-            timestampString = "590937043.652665"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "getVenuePhotos(dictionary:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "0F04ABB0-953D-4DF8-B2B5-488A5EA7F184 - 65132144a22be76f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diveBarv3.UIView1.destinationLocation2D.getter : __C.CLLocationCoordinate2D"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/UIView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  uuid = "0F04ABB0-953D-4DF8-B2B5-488A5EA7F184 - 4fe42ccd993def63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diveBarv3.UIView1.destinationLocation2D.setter : __C.CLLocationCoordinate2D"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/UIView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  uuid = "0F04ABB0-953D-4DF8-B2B5-488A5EA7F184 - 9889d481e4527172"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diveBarv3.UIView1.destinationLocation2D.modify : __C.CLLocationCoordinate2D"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/UIView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "0F04ABB0-953D-4DF8-B2B5-488A5EA7F184 - 77fed0e79e92a1f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diveBarv3.UIView1.destinationLocation2D.modify : __C.CLLocationCoordinate2D with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/UIView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "0F04ABB0-953D-4DF8-B2B5-488A5EA7F184 - feedf4a74902013e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diveBarv3.UIView1.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; diveBarv3.UIView1"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/UIView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1423">
+               </Location>
+               <Location
+                  uuid = "0F04ABB0-953D-4DF8-B2B5-488A5EA7F184 - 8547e59ff82ee257"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diveBarv3.UIView1.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;diveBarv3.UIView1&gt;"
+                  moduleName = "diveBarv3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amaccara/Desktop/diveBarv3/diveBarv3/UIView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1354">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
